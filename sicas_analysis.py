@@ -33,6 +33,16 @@ def get_translated_label(chinese_label):
         '很少互动': 'Rare Interaction',
         '从未互动': 'No Interaction',
         
+        # Interaction types
+        '点赞': 'Like',
+        '评论': 'Comment',
+        '分享到个人社交圈': 'Share',
+        '参与话题活动': 'Topic Activities',
+        '私信交流': 'Private Messages',
+        '观看直播': 'Watch Livestreams',
+        '其他': 'Other',
+        '无': 'None',
+        
         # Purchase (action)
         '是': 'Yes',
         '否': 'No',
@@ -43,7 +53,18 @@ def get_translated_label(chinese_label):
         '一般': 'Neutral',
         '不太满意': 'Not Very Satisfied',
         '很不满意': 'Not Satisfied At All',
-        '非常不满意': 'Not Satisfied At All',
+        '非常不满意': 'Not Very Satisfied',
+        
+        # Improvements needed
+        '内容丰富度': 'Content Richness',
+        '与用户互动性': 'User Interaction',
+        '创意和设计感': 'Creativity & Design',
+        '信息实用性': 'Practical Information',
+        '发布频率': 'Posting Frequency',
+        '客户服务／售后服务': 'Customer Service',
+        '其他建议': 'Other Suggestions',
+        '无需改进': 'No Improvement Needed',
+        '其他': 'Other',
         
         # Demographics - Gender
         '男': 'Male',
@@ -75,13 +96,34 @@ def get_translated_label(chinese_label):
         '3-5小时': '3-5 Hours',
         '5小时以上': '>5 Hours',
         
-        # Interaction types
-        '点赞': 'Like',
-        '评论': 'Comment',
-        '分享到个人社交圈': 'Share',
-        '参与话题活动': 'Topic Activities',
-        '私信交流': 'Private Messages',
-        '观看直播': 'Watch Livestreams',
+        # Brand contact channels 
+        '微信公众号': 'WeChat Official Account',
+        '微博': 'Weibo',
+        '小红书': 'Xiaohongshu',
+        '抖音/快手': 'TikTok/Kuaishou',
+        '品牌官网': 'Brand Website',
+        '朋友推荐': 'Friend Recommendation',
+        '线下店铺': 'Offline Store',
+        '社交媒体广告': 'Social Media Ads',
+        '第三方平台': 'Third-party Platform',
+        'bilibili': 'Bilibili',
+        '得物': 'Dewu',
+        
+        # Brand impression
+        '高端户外品牌': 'High-end Outdoor Brand',
+        '专业性强': 'Professional',
+        '价格较高': 'High Price',
+        '环保可持续': 'Eco-friendly',
+        '产品设计时尚': 'Stylish Design',
+        '广告／宣传设计时尚': 'Stylish Advertising',
+        '普通品牌': 'Ordinary Brand',
+        '装逼': 'Show-off Brand',
+
+        # Brand understanding increase
+        '很多': 'Significant Increase',
+        '一些': 'Some Increase',
+        '较少': 'Little Increase',
+        '完全没有': 'No Increase',
         
         # Purchase channels
         '官方电商平台': 'Official E-commerce',
@@ -95,14 +137,13 @@ def get_translated_label(chinese_label):
         '不需要相关产品': 'No Need',
         '产品信息不够清楚': 'Unclear Product Info',
         '品牌吸引力不足': 'Low Brand Appeal',
+        '购买流程不便捷': 'Inconvenient Purchase Process',
+        '推广较少': 'Limited Promotion',
         
-        # Improvement areas
-        '内容丰富度': 'Content Richness',
-        '与用户互动性': 'User Interaction',
-        '创意和设计感': 'Creativity & Design',
-        '信息实用性': 'Practical Information',
-        '发布频率': 'Posting Frequency',
-        '客户服务／售后服务': 'Customer Service'
+        # Miscellaneous 
+        '跳过': 'Skipped',
+        '(空)': 'Empty',
+        '空': 'Empty'
     }
     
     # Return the translation if available, otherwise return the original

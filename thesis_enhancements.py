@@ -18,6 +18,144 @@ if not os.path.exists('thesis_plots'):
 ARCTERYX_COLORS = ["#2E6E91", "#5CA2C3", "#9CCFE8", "#F0C53F", "#E58723", "#E63946", "#8D99AE", "#57A773"]
 sns.set_palette(ARCTERYX_COLORS)
 
+def get_translated_label(chinese_label):
+    """Create simplified English labels for Chinese categories"""
+    translations = {
+        # Brand awareness (sense)
+        '非常了解': 'Very Familiar',
+        '略有了解': 'Somewhat Familiar',
+        '不太了解': 'Not Very Familiar',
+        '完全不了解': 'Not Familiar At All',
+        
+        # Attraction (interest)
+        '非常吸引': 'Very Attractive',
+        '比较吸引': 'Fairly Attractive',
+        '一般': 'Neutral',
+        '不太吸引': 'Not Very Attractive',
+        '完全不吸引': 'Not Attractive At All',
+        
+        # Interaction (communication)
+        '经常互动(点赞、评论、分享等)': 'Frequent Interaction',
+        '偶尔互动': 'Occasional Interaction',
+        '很少互动': 'Rare Interaction',
+        '从未互动': 'No Interaction',
+        
+        # Interaction types
+        '点赞': 'Like',
+        '评论': 'Comment',
+        '分享到个人社交圈': 'Share',
+        '参与话题活动': 'Topic Activities',
+        '私信交流': 'Private Messages',
+        '观看直播': 'Watch Livestreams',
+        '其他': 'Other',
+        '无': 'None',
+        
+        # Purchase (action)
+        '是': 'Yes',
+        '否': 'No',
+        
+        # Satisfaction (share)
+        '非常满意': 'Very Satisfied',
+        '比较满意': 'Fairly Satisfied',
+        '一般': 'Neutral',
+        '不太满意': 'Not Very Satisfied',
+        '很不满意': 'Not Satisfied At All',
+        '非常不满意': 'Not Very Satisfied',
+        
+        # Improvements needed
+        '内容丰富度': 'Content Richness',
+        '与用户互动性': 'User Interaction',
+        '创意和设计感': 'Creativity & Design',
+        '信息实用性': 'Practical Information',
+        '发布频率': 'Posting Frequency',
+        '客户服务／售后服务': 'Customer Service',
+        '其他建议': 'Other Suggestions',
+        '无需改进': 'No Improvement Needed',
+        '其他': 'Other',
+        
+        # Demographics - Gender
+        '男': 'Male',
+        '女': 'Female',
+        
+        # Demographics - Age
+        '18-25岁': '18-25',
+        '26-35岁': '26-35',
+        '36-45岁': '36-45',
+        '46岁及以上': '46+',
+        '18岁以下': 'Under 18',
+        
+        # Demographics - Occupation
+        '政府机关工作人员': 'Gov. Employee',
+        '企业职员': 'Corporate Employee',
+        '自由职业者': 'Freelancer',
+        '学生': 'Student',
+        '其他': 'Other',
+        
+        # Demographics - Income
+        '3000元以下': '<3000 RMB',
+        '3000-8000元': '3000-8000 RMB',
+        '8000-15000元': '8000-15000 RMB',
+        '15000元以上': '>15000 RMB',
+        
+        # Demographics - Social Media Usage
+        '少于1小时': '<1 Hour',
+        '1-3小时': '1-3 Hours',
+        '3-5小时': '3-5 Hours',
+        '5小时以上': '>5 Hours',
+        
+        # Brand contact channels 
+        '微信公众号': 'WeChat Official Account',
+        '微博': 'Weibo',
+        '小红书': 'Xiaohongshu',
+        '抖音/快手': 'TikTok/Kuaishou',
+        '品牌官网': 'Brand Website',
+        '朋友推荐': 'Friend Recommendation',
+        '线下店铺': 'Offline Store',
+        '社交媒体广告': 'Social Media Ads',
+        '第三方平台': 'Third-party Platform',
+        'bilibili': 'Bilibili',
+        '得物': 'Dewu',
+        
+        # Brand impression
+        '高端户外品牌': 'High-end Outdoor Brand',
+        '专业性强': 'Professional',
+        '价格较高': 'High Price',
+        '环保可持续': 'Eco-friendly',
+        '产品设计时尚': 'Stylish Design',
+        '广告／宣传设计时尚': 'Stylish Advertising',
+        '普通品牌': 'Ordinary Brand',
+        '装逼': 'Show-off Brand',
+
+        # Brand understanding increase
+        '很多': 'Significant Increase',
+        '一些': 'Some Increase',
+        '较少': 'Little Increase',
+        '完全没有': 'No Increase',
+        
+        # Purchase channels
+        '官方电商平台': 'Official E-commerce',
+        '第三方电商平台（如天猫、京东）': 'Third-party E-commerce',
+        '线下专卖店': 'Offline Store',
+        '朋友代购': 'Friend Purchase',
+        '社交媒体平台链接／小程序': 'Social Media Link',
+        
+        # Barriers to purchase
+        '价格过高': 'High Price',
+        '不需要相关产品': 'No Need',
+        '产品信息不够清楚': 'Unclear Product Info',
+        '品牌吸引力不足': 'Low Brand Appeal',
+        '购买流程不便捷': 'Inconvenient Purchase Process',
+        '推广较少': 'Limited Promotion',
+        
+        # Miscellaneous 
+        '跳过': 'Skipped',
+        '(空)': 'Empty',
+        '空': 'Empty'
+    }
+    
+    # Return the translation if available, otherwise return the original
+    return translations.get(chinese_label, chinese_label)
+
 def set_thesis_style():
     """Set up a professional style for thesis-quality plots"""
     plt.style.use('seaborn-v0_8-whitegrid')
