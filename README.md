@@ -24,11 +24,63 @@ pip install -r requirements.txt
 
 ## Running the Analysis
 
-To run the analysis:
+### Basic SICAS Analysis
+
+To run the basic SICAS analysis:
 
 ```bash
 python sicas_analysis.py
 ```
+
+### Enhanced Thesis Analysis
+
+To generate the enhanced thesis report with additional visualizations:
+
+```bash
+python thesis_enhancements.py
+```
+
+### Additional Column Analysis
+
+To analyze additional survey columns beyond the core SICAS framework:
+
+```bash
+python enhanced_analysis.py
+```
+
+### Statistical Validation
+
+To run statistical validation tests (reliability, validity, factor analysis):
+
+```bash
+python statistical_validation.py
+```
+
+## Reports and Output Files
+
+The project generates multiple reports:
+
+1. **Core SICAS Analysis**
+   - `sicas_analysis_report.md`: Basic SICAS model analysis
+   - Visualizations in `plots/` directory
+
+2. **Enhanced Thesis Report**
+   - `thesis_report.md`: Comprehensive analysis formatted for thesis presentation
+   - `thesis_report.html`: HTML version for better formatting
+   - `thesis_report.pdf`: PDF version for distribution
+   - Enhanced visualizations in `thesis_plots/` directory
+
+3. **Additional Analysis**
+   - `additional_analysis_report.md`: Analysis of additional survey columns
+   - Supplementary visualizations in `additional_plots/` directory
+
+4. **Statistical Validation**
+   - `statistical_validation_report.md`: Statistical validation of the SICAS model
+   - Validation visualizations in `validation_plots/` directory, including:
+     - Dimension correlations
+     - Factor loadings
+     - Scree plot
+     - PCA variance
 
 ## Chinese Character Handling
 
@@ -36,15 +88,15 @@ The script includes a translation system that converts Chinese text labels to En
 
 The translation dictionary is located in the `get_translated_label()` function in the script and can be extended with additional translations if needed.
 
-## Output
+## Statistical Validation Overview
 
-The script will generate:
+The statistical validation includes:
 
-1. A comprehensive analysis report in `sicas_analysis_report.md`
-2. Visualizations in the `plots/` directory, including:
-   - Demographic analysis charts (with English labels)
-   - SICAS component breakdowns (with English labels)
-   - SICAS funnel visualization
+1. **Reliability Analysis**: Cronbach's alpha tests to ensure internal consistency
+2. **Validity Analysis**: Correlation analysis between SICAS dimensions
+3. **Factor Analysis**: Examination of factor loadings and principal component analysis
+
+These statistical tests help confirm the validity of the SICAS model as a framework for analyzing social media marketing effectiveness.
 
 ## Data Requirements
 
@@ -56,4 +108,4 @@ The script is designed to work with survey data that includes questions related 
 - Purchase behavior and barriers
 - Overall satisfaction with brand social media
 
-If your data structure is different, you may need to adjust the column names in the `analyze_sicas()` and `perform_demographic_analysis()` functions, and potentially update the translation dictionary. 
+If your data structure is different, you may need to adjust the column names in the analysis functions and potentially update the translation dictionary. 
