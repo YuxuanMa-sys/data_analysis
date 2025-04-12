@@ -43,6 +43,7 @@ def get_translated_label(chinese_label):
         '一般': 'Neutral',
         '不太满意': 'Not Very Satisfied',
         '很不满意': 'Not Satisfied At All',
+        '非常不满意': 'Not Satisfied At All',
         
         # Demographics - Gender
         '男': 'Male',
@@ -53,6 +54,7 @@ def get_translated_label(chinese_label):
         '26-35岁': '26-35',
         '36-45岁': '36-45',
         '46岁及以上': '46+',
+        '18岁以下': 'Under 18',
         
         # Demographics - Occupation
         '政府机关工作人员': 'Gov. Employee',
